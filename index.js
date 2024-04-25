@@ -1,4 +1,7 @@
-const Octokit = require("octokit");
+import { Octokit } from "octokit";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const octokit = new Octokit({ 
     auth: process.env.GITHUB_TOKEN
@@ -6,8 +9,8 @@ const octokit = new Octokit({
 
 const obtenerIssues = async() => {
     await octokit.request("GET /repos/{owner}/{repo}/issues", {
-        owner: "octocat",
-        repo: "Spoon-Knife",
+        owner: "godot",
+        repo: "godotengine",
     });
 }
 
