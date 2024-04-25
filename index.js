@@ -8,12 +8,12 @@ const octokit = new Octokit({
 });
 
 const obtenerIssues = async() => {
-    await octokit.request("GET /repos/{owner}/{repo}/issues", {
-        owner: "godot",
-        repo: "godotengine",
+    return await octokit.request("GET /repos/{owner}/{repo}/issues", {
+        owner: "godotengine",
+        repo: "godot",
     });
 }
 
-console.log(octokit);
+console.log(await obtenerIssues());
   
   
